@@ -5,8 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Money Master</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <h1>Money Master</h1>
+    <header class="mx-auto my-10">
+        <h1 class="text-6xl text-center text-cyan-500 font-bold">Money Master</h1>
+    </header>
+    <main class="flex bg-gray-200">
+        <section class="w-1/2 p-10"><img src="image/money.jpg" alt="money image"></section>
+        <section class="w-1/2 p-10 text-center">
+            <h1 class="text-3xl">Income</h1>
+            <label for="income">Salary:</label>
+            <input class=" px-2 py-1 rounded-sm" type="text">
+            <h1 class="text-3xl">Expenses</h1>
+            <label for="income">Food:</label>
+            <input class=" px-2 py-1 rounded-sm" type="text"><br>
+            <label for="income">Rent:</label>
+            <input class=" px-2 py-1 rounded-sm" type="text"><br>
+            <label for="income">Clothes:</label>
+            <input class=" px-2 py-1 rounded-sm" type="text"><br>
+            <button class="bg-blue-400 py-2 px-3 font-semibold rounded">Calculate</button>
+            <h1 class="text-3xl">Total Expenses: <Span id="total-expenses">00</Span></h1>
+            <br>
+            <h1 class="text-3xl">Balance: <Span id="balance">00</Span></h1>
+            <label for="">Save:</label>
+            <input id="" class=" px-2 py-1 rounded-sm" type="text"> <span>%</span>
+            <button class="bg-blue-400 py-2 px-3 font-semibold rounded">Save</button>
+            <h1 class="text-3xl">Saving Amount: <span id="saving-amount">00</span></h1>
+            <h1 class="text-3xl">Remaining Balance: <span id="remaining-balance">00</span></h1>
+        </section>
+    </main>
 </body>
 </html>
