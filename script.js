@@ -12,6 +12,10 @@ function getElement(elementId) {
 }
 function setValueById(locationId, setValue) {
     const setLocation= document.getElementById(locationId);
+    if (isNaN(setValue)) {
+        alert('Please Fill The Empty Input Filed or Input Number')
+        return;
+    }
     setLocation.innerText=setValue;
 }
 
@@ -34,11 +38,13 @@ function balanceCalculation() {
 // event handler calculate total expenses and balance
 document.getElementById('calculate').addEventListener('click', function () {
     const expense=totalExpensesCalculation();
+    const balanceAmount =balanceCalculation();
+    if (expense > getValue('salary')) {
+        alert('Too Much Expenses')
+        return;
+    }
     setValueById('total-expenses', expense)
-
-    //balance
-    
-    setValueById('balance', balanceCalculation())
+    setValueById('balance', balanceAmount)
     
 })
 
@@ -46,8 +52,13 @@ document.getElementById('calculate').addEventListener('click', function () {
 document.getElementById('save').addEventListener('click',function () {
     const savePercentage=getValue('save-input')*0.01;
     const calculateSaveAmount=getValue('salary')*savePercentage;
-    setValueById('saving-amount', calculateSaveAmount);
     const remainingAmount=balanceCalculation()-calculateSaveAmount;
+    if (remainingAmount<0) {
+        alert('You Can Not Save More Than You Have')
+        return;
+    }
+    setValueById('saving-amount', calculateSaveAmount);
+    
     setValueById('remaining-balance', remainingAmount)
     // console.log(calculateSaveAmount);
 
